@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import HeaderDataUser from "../../component/Header/HeaderDataUser";
 import SidebarPatient from "../../component/Sidebar/SidebarPatient";
 import Paginations from "../../component/Pagination/Paginations";
+import WithAuthorization from "../../utils/auth";
 
 // Data dummy untuk pasien
 const dummyData = [
@@ -35,6 +36,7 @@ const dummyPagination = {
 };
 
 const ResultDataDiagnosis = () => {
+  const auth = WithAuthorization(["patient"]);
 
   const [data, setData] = useState([]);
   const [pagination, setPagination] = useState({});
@@ -60,6 +62,8 @@ const ResultDataDiagnosis = () => {
     setCurrentPage(pageNumber);
   };
 
+  
+  if (auth) {
     return (
       <div className="g-sidenav-show bg-gray-100">
         <div className="min-height-300 bg-primary position-absolute w-100"></div>
@@ -198,6 +202,9 @@ const ResultDataDiagnosis = () => {
         </main>
       </div>
     );
+  }else {
+    return <div></div>;
+  }
 };
 
 export default ResultDataDiagnosis;

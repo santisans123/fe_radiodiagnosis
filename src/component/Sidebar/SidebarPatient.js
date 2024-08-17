@@ -48,14 +48,14 @@ const SidebarPatient = () => {
                   <span className="nav-link-text ms-1">Hasil Pemeriksaan</span>
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink activeClassName="active" className="nav-link" to="/patient-history">
                   <div className="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                     <img src="../assets/img/App/history.png" />
                   </div>
                   <span className="nav-link-text ms-1">History</span>
                 </NavLink>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <NavLink activeClassName="active" className="nav-link" to="/patient-profile">
                   <div className="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">

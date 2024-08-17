@@ -5,7 +5,9 @@ import HeaderDataUser from "../../component/Header/HeaderDataUser";
 import SidebarPatient from "../../component/Sidebar/SidebarPatient";
 import Paginations from "../../component/Pagination/Paginations";
 import HeaderAdmin from "../../component/Header/HeaderAdmin";
+import WithAuthorization from "../../utils/auth";
 
+const auth = WithAuthorization(["patient"]);
 // Data dummy untuk pasien
 const dummyData = [
   {
@@ -64,7 +66,9 @@ const DashboardPatient = () => {
     setCurrentPage(pageNumber);
   };
 
-  return (
+ 
+  if (auth) {
+    return (
     <div className="g-sidenav-show bg-gray-100">
       <div className="min-height-300 bg-primary position-absolute w-100"></div>
       <aside
@@ -179,6 +183,9 @@ const DashboardPatient = () => {
       </body>
     </div>
   );
+  }else {
+    return <div></div>;
+  }
 };
 
 export default DashboardPatient;
