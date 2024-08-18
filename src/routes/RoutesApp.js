@@ -40,11 +40,11 @@ const RoutesApp = () => {
     <div>
       <Router>
         <Routes>
+          <Route path="/" element={<LoginUser />} />
           <Route path="/patient-profile" element={<ProfilePatient />} />
           <Route path="/patient-result-diagnosis" element={<ResultDataDiagnosis />} />
           <Route path="/patient-history" element={<HistoryPatient />} />
           <Route path="/patient-dashboard" element={<DashboardPatient />} />
-          <Route path="/" element={<LoginUser />} />
           <Route path="/login-patient" element={<LoginPatient />} />
           <Route path="/regis-patient" element={<RegisterPatient />} />
           <Route path="/data-user" element={<DataUser />} />
